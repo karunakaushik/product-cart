@@ -44,7 +44,7 @@ This project is a simple product listing and cart system built with Next.js, Rea
         app/
             cart/page.tsx
             listing-page/page.tsx       // Listing Page
-            search/page.js        // Search Page
+            search/page.tsx        // Search Page
             layout.tsx            // Root layout
             page.tsx               // Home Page
             globals.css           // Global styles (optional)
