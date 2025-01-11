@@ -40,7 +40,7 @@ This project is a simple product listing and cart system built with Next.js, Rea
     src/
         api/
             mock-api.tsx        
-            mock-data.txsx  
+            mock-data.tsx  
         app/
             cart/page.tsx
             listing-page/page.tsx       // Listing Page
