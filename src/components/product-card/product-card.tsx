@@ -3,7 +3,7 @@
 import { cartData, useCartStore } from "@/store/create-store";
 
 const ProductCard = ({ product }: { product: cartData }) => {
-  const { cart, addToCart, updateQuantity, removeFromCart } = useCartStore();
+  const { cart, addToCart, updateQuantity } = useCartStore();
   const existingProduct = cart.find(
     (item: { id: number }) => item?.id === product?.id
   );
