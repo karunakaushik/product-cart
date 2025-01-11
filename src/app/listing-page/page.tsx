@@ -1,7 +1,8 @@
 "use client";
 
 import { useProducts } from "@/api/mock-api";
-import ProductCard from "@/components/product-card";
+import ProductCard from "@/components/product-card/product-card";
+import { type cartData } from "@/store/create-store";
 
 const ListingPage = () => {
   const { data: products, isLoading } = useProducts("listing");
@@ -12,11 +13,9 @@ const ListingPage = () => {
     <div className="flex gap-4 flex-col">
       <h1>Listing Page</h1>
       <div className="flex gap-4 flex-wrap">
-        {products?.map(
-          (product: { id: number; name: string; quantity: number }) => (
-            <ProductCard key={product?.id} product={product} />
-          )
-        )}
+        {products?.map((product: cartData) => (
+          <ProductCard key={product?.id} product={product} />
+        ))}
       </div>
     </div>
   );

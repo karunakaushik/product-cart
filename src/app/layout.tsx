@@ -12,6 +12,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>Product-Cart</title>
+      </head>
       <body>
         <QueryClientProvider client={queryClient}>
           <NavBar />

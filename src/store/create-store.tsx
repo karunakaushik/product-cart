@@ -1,9 +1,16 @@
 import { create } from "zustand";
 
+export type cartData = {
+  id: number;
+  name: string;
+  quantity: number;
+  price: number;
+};
+
 export const useCartStore = create((set) => ({
   cart: [],
   addToCart: (product: { id: any }) =>
-    set((state: { cart: any[] }) => {
+    set((state: { cart: cartData[] }) => {
       const existingProduct = state.cart.find((item) => item.id === product.id);
       if (existingProduct) {
         return {
@@ -18,15 +25,15 @@ export const useCartStore = create((set) => ({
       }
     }),
 
-  removeFromCart: (productId: any) =>
-    set((state: { cart: any[] }) => {
+  removeFromCart: (productId: number) =>
+    set((state: { cart: cartData[] }) => {
       return {
         cart: state.cart.filter((item) => item.id !== productId),
       };
     }),
 
-  updateQuantity: (productId: any, quantity: number) =>
-    set((state: { cart: any[] }) => {
+  updateQuantity: (productId: number, quantity: number) =>
+    set((state: { cart: cartData[] }) => {
       if (quantity <= 0) {
         return { cart: state.cart.filter((item) => item.id !== productId) };
       }
@@ -37,7 +44,7 @@ export const useCartStore = create((set) => ({
         ),
       };
     }),
-  totalProduct: (state: { cart: any[] }) => {
+  totalProduct: (state: { cart: cartData[] }) => {
     const total = state?.cart?.reduce((sum, item) => sum + item.quantity, 0);
 
     return total || 0;

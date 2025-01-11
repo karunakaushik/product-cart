@@ -36,6 +36,6 @@ const mockData = {
   ],
 };
 
-export const fetchProducts = async (page: string) => {
-  return JSON.parse(JSON.stringify(mockData[page])); // Sanitize
+export const fetchProducts = async (page: "listing" | "search") => {
+  return JSON.parse(JSON.stringify(mockData[page]));
 };
