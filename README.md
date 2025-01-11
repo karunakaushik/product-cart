@@ -3,17 +3,17 @@
 This project is a simple product listing and cart system built with Next.js, React Query, and Zustand for state management. It provides a listing page where users can view products, add them to their cart, and see real-time updates of the cart state across different pages. It also includes a search page where users can search for products and see the cart updates reflected across pages.
 
 ### Features
-  Product Listing: Displays a list of products available for purchase.
-  Add to Cart: Products can be added to the cart, with real-time quantity updates.
-  Search Page: Search for products available in the catalog.
-  Real-time Cart Updates: The cart updates dynamically across both the listing and search pages. Quantity adjustments are reflected in real-time across all pages.
-  Persisted State: Uses Zustand to manage cart state globally across the application.
+    Product Listing: Displays a list of products available for purchase.
+    Add to Cart: Products can be added to the cart, with real-time quantity updates.
+    Search Page: Search for products available in the catalog.
+    Real-time Cart Updates: The cart updates dynamically across both the listing and search pages. Quantity adjustments are reflected in real-time across all pages.
+    Persisted State: Uses Zustand to manage cart state globally across the application.
 
 ### Tech Stack
-  Next.js: React framework for building server-side rendered applications.
-  Zustand: A small, fast, and scalable bearbones state management library for React.
-  React Query: Data fetching library to manage server state (though, in this case, mock data is used).
-  Tailwind CSS: Utility-first CSS framework for styling.
+    Next.js: React framework for building server-side rendered applications.
+    Zustand: A small, fast, and scalable bearbones state management library for React.
+    React Query: Data fetching library to manage server state (though, in this case, mock data is used).
+    Tailwind CSS: Utility-first CSS framework for styling.
 
 ### Setup
     Prerequisites
