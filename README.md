@@ -36,6 +36,28 @@ This project is a simple product listing and cart system built with Next.js, Rea
         Or, if you’re using yarn: yarn dev
         Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Folder Structure :
+    src/
+        api/
+            mock-api.tsx        
+            mock-data.txsx  
+        app/
+            cart/page.tsx
+            listing-page/page.tsx       // Listing Page
+            search/page.js        // Search Page
+            layout.tsx            // Root layout
+            page.tsx               // Home Page
+            globals.css           // Global styles (optional)
+        
+        components/
+            nav-bar/
+                nav-bar.tsx           // NavBar component
+            product-card/
+                product-card.tsx     // ProductCard component
+        store/
+            create-store.tsx        // Zustand store for cart management
+            
+
 ### Future Improvements
     Persistent Cart: Store cart data in local storage or a database to persist across page refreshes.
     Product Categories: Introduce different categories of products and allow users to filter the list of products.
