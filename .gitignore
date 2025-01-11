@@ -2,6 +2,12 @@
 /.pnp
 .pnp.js
 
+# Next.js build output
+.next/
+
+# Log files
+*.log
+
 # testing
 /coverage
 

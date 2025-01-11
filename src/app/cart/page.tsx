@@ -6,16 +6,25 @@ const CartPage = () => {
   const { cart, removeFromCart } = useCartStore();
 
   return (
-    <div>
+    <div className="flex w-full flex-col items-center gap-3">
       <h1>Your Cart</h1>
-      {cart?.map((product: { id: number; name: string; quantity: number }) => (
-        <div key={product.id}>
-          <h3>
-            {product.name}: <span>Quantity: {product.quantity}</span>{" "}
-            <span onClick={() => removeFromCart(product.id)}>Remove</span>
-          </h3>
-        </div>
-      ))}
+      {cart?.length > 0 ? (
+        cart?.map((product: { id: number; name: string; quantity: number }) => (
+          <div key={product.id} className="flex items-center gap-6">
+            <h3>
+              {product.name}: <span>Quantity: {product.quantity}</span>{" "}
+            </h3>
+            <span
+              className="material-symbols-outlined cursor-pointer"
+              onClick={() => removeFromCart(product.id)}
+            >
+              delete
+            </span>
+          </div>
+        ))
+      ) : (
+        <>Cart is empty !</>
+      )}
     </div>
   );
 };

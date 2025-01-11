@@ -20,9 +20,7 @@ const ProductCard = ({ product }: { product: cartData }) => {
     <div className="flex flex-col rounded-md w-fit text-black py-4 px-8 bg-white gap-4">
       <h3>{product?.name}</h3>
       <p>Price: ${product?.price}</p>
-
-      <button>Add to Cart</button>
-
+      <p>Add to Cart</p>
       <div className="flex items-center gap-3">
         <button
           onClick={() => handleQuantityChange(quantity - 1)}
