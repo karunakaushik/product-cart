@@ -18,7 +18,7 @@ interface CartStore {
 export const useCartStore = create<CartStore>((set) => ({
   cart: [],
   addToCart: (product: { id: any }) =>
-    set((state: { cart: cartData[] }) => {
+    set((state: any) => {
       const existingProduct = state.cart.find((item) => item.id === product.id);
       if (existingProduct) {
         return {
@@ -34,14 +34,14 @@ export const useCartStore = create<CartStore>((set) => ({
     }),
 
   removeFromCart: (productId: number) =>
-    set((state: { cart: cartData[] }) => {
+    set((state: any) => {
       return {
         cart: state.cart.filter((item) => item.id !== productId),
       };
     }),
 
   updateQuantity: (productId: number, quantity: number) =>
-    set((state: { cart: cartData[] }) => {
+    set((state: any) => {
       if (quantity <= 0) {
         return { cart: state.cart.filter((item) => item.id !== productId) };
       }
@@ -52,7 +52,7 @@ export const useCartStore = create<CartStore>((set) => ({
         ),
       };
     }),
-  totalProduct: (state: { cart: cartData[] }) => {
+  totalProduct: (state: any) => {
     const total = state?.cart?.reduce((sum, item) => sum + item.quantity, 0);
 
     return total || 0;
