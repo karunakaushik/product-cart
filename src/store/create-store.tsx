@@ -7,7 +7,15 @@ export type cartData = {
   price: number;
 };
 
-export const useCartStore = create((set) => ({
+interface CartStore {
+  cart: cartData[];
+  addToCart: (product: cartData) => void;
+  removeFromCart: (productId: number) => void;
+  updateQuantity: (productId: number, quantity: number) => void;
+  totalProduct: () => number;
+}
+
+export const useCartStore = create<CartStore>((set) => ({
   cart: [],
   addToCart: (product: { id: any }) =>
     set((state: { cart: cartData[] }) => {

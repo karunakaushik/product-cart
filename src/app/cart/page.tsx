@@ -1,9 +1,17 @@
 "use client";
 
-import { useCartStore } from "@/store/create-store";
+import { type cartData, useCartStore } from "@/store/create-store";
+
+interface CartStore {
+  cart: cartData[];
+  addToCart: (product: cartData) => void;
+  removeFromCart: (productId: number) => void;
+  updateQuantity: (productId: number, quantity: number) => void;
+  totalProduct: () => number;
+}
 
 const CartPage = () => {
-  const { cart, removeFromCart } = useCartStore();
+  const { cart, removeFromCart } = useCartStore() as CartStore;
 
   return (
     <div className="flex w-full flex-col items-center gap-3">
@@ -16,7 +24,7 @@ const CartPage = () => {
             </h3>
             <span
               className="material-symbols-outlined cursor-pointer"
-              onClick={() => removeFromCart(product.id)}
+              onClick={() => removeFromCart(product?.id)}
             >
               delete
             </span>
