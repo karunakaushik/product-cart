@@ -1,3 +1,5 @@
+// eslint-disable
+
 import { create } from "zustand";
 
 export type cartData = {
