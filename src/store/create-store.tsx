@@ -2,7 +2,7 @@
 
 import { create } from "zustand";
 
-export type cartData = {
+type cartData = {
   id: number;
   name: string;
   quantity: number;
