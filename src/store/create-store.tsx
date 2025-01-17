@@ -12,7 +12,7 @@ interface CartStore {
   addToCart: (product: cartData) => void;
   removeFromCart: (productId: number) => void;
   updateQuantity: (productId: number, quantity: number) => void;
-  totalProduct: () => number;
+  totalProduct: (p: any) => number;
 }
 
 export const useCartStore = create<CartStore>((set) => ({
